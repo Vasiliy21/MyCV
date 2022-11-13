@@ -32,7 +32,7 @@ struct LinksView: View {
             ButtonLinkView(image: "message", title: "WhatsApp", textColor: .green, buttonColor: .white, action: {})
             ButtonLinkView(image: "message", title: "VK", textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0), buttonColor: .white, action: {})
             ButtonLinkView(image: "envelope", title: "Email", textColor: .gray, buttonColor: .white, action: {})
-//            ButtonLinkView(image: "phone", title: "Phone number", textColor: .black, buttonColor: .white, action: {})
+            ButtonLinkView(image: "phone", title: "Phone number", textColor: .black, buttonColor: .white, action: {})
 
             Spacer()
         }
