@@ -10,7 +10,7 @@ import SwiftUI
 struct BlocksGridView: View {
     
     let themeName: String
-    private let blocks = Block.getBlock()
+    let blocks: [Block]
     private let columns = [GridItem(.adaptive(minimum: 160))]
     
     var body: some View {
@@ -28,6 +28,6 @@ struct BlocksGridView: View {
 
 struct BlocksGridView_Previews: PreviewProvider {
     static var previews: some View {
-        BlocksGridView(themeName: "Заголовок")
+        BlocksGridView(themeName: "Заголовок", blocks: Block.getBlock())
     }
 }
