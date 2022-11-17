@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct BlocksGridView: View {
+    
+    let themeName: String
+    private let blocks = Block.getBlock()
+    private let columns = [GridItem(.adaptive(minimum: 160))]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(blocks, id: \.blockView.title) { block in
+                        block.blockView
+                    }
+                }
+            }
+            .navigationTitle(themeName)
+            .padding(.horizontal)
     }
 }
 
 struct BlocksGridView_Previews: PreviewProvider {
     static var previews: some View {
-        BlocksGridView()
+        BlocksGridView(themeName: "Заголовок")
     }
 }
