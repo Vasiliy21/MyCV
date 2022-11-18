@@ -12,6 +12,7 @@
 		FF1CC76A2924D0B6008F18D3 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC7692924D0B6008F18D3 /* BlockView.swift */; };
 		FF42D48428EDCCFD00FA80A4 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42D48328EDCCFD00FA80A4 /* LinksView.swift */; };
 		FFB548162924D8850005715E /* ThemesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB548152924D8850005715E /* ThemesListView.swift */; };
+		FFB5481A2926D5530005715E /* QrCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB548192926D5520005715E /* QrCodeView.swift */; };
 		FFC82BB028ED7F3000BA7205 /* MyCVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC82BAF28ED7F3000BA7205 /* MyCVApp.swift */; };
 		FFC82BB228ED7F3000BA7205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC82BB128ED7F3000BA7205 /* ContentView.swift */; };
 		FFC82BB428ED7F3700BA7205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC82BB328ED7F3700BA7205 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		FF1CC7692924D0B6008F18D3 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		FF42D48328EDCCFD00FA80A4 /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
 		FFB548152924D8850005715E /* ThemesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesListView.swift; sourceTree = "<group>"; };
+		FFB548192926D5520005715E /* QrCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeView.swift; sourceTree = "<group>"; };
 		FFC82BAC28ED7F3000BA7205 /* MyCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC82BAF28ED7F3000BA7205 /* MyCVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCVApp.swift; sourceTree = "<group>"; };
 		FFC82BB128ED7F3000BA7205 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				FFC82BBD28EDBA7400BA7205 /* ButtonView.swift */,
 				FF42D48328EDCCFD00FA80A4 /* LinksView.swift */,
 				FFB548152924D8850005715E /* ThemesListView.swift */,
+				FFB548192926D5520005715E /* QrCodeView.swift */,
 				FF1CC7652924CD3C008F18D3 /* BlocksGridView.swift */,
 				FF1CC7692924D0B6008F18D3 /* BlockView.swift */,
 				FF1CC7672924CE55008F18D3 /* Blocks.swift */,
@@ -160,6 +163,7 @@
 				FFC82BB028ED7F3000BA7205 /* MyCVApp.swift in Sources */,
 				FF1CC7682924CE55008F18D3 /* Blocks.swift in Sources */,
 				FF1CC76A2924D0B6008F18D3 /* BlockView.swift in Sources */,
+				FFB5481A2926D5530005715E /* QrCodeView.swift in Sources */,
 				FFB548162924D8850005715E /* ThemesListView.swift in Sources */,
 				FF42D48428EDCCFD00FA80A4 /* LinksView.swift in Sources */,
 				FFC82BBE28EDBA7500BA7205 /* ButtonView.swift in Sources */,

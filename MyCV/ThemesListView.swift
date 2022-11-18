@@ -35,7 +35,6 @@ struct ThemesListView: View {
             }
         }
         .navigationTitle("Hard skills")
-
     }
 }
 

@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct LinksView: View {
-
+    @Binding var halfLinksViewIsPresented: Bool
     @Binding var linksViewIsPresented: Bool
-
+    
     var body: some View {
-
+        
         VStack {
             HStack {
                 Spacer()
-
+                
                 Button("Back") {
                     linksViewIsPresented.toggle()
                 }
@@ -24,16 +24,18 @@ struct LinksView: View {
                 .buttonBorderShape(.roundedRectangle)
                 .padding()
             }
-
-
+            
+            
             Spacer()
-
-            ButtonLinkView(image: "message", title: "Telegram", textColor: .blue, buttonColor: .white, action: {})
+            
+            ButtonLinkView(image: "message", title: "Telegram", textColor: .blue, buttonColor: .white, action: {halfLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfLinksViewIsPresented) {
+                QrCodeView()
+            }
             ButtonLinkView(image: "message", title: "WhatsApp", textColor: .green, buttonColor: .white, action: {})
             ButtonLinkView(image: "message", title: "VK", textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0), buttonColor: .white, action: {})
             ButtonLinkView(image: "envelope", title: "Email", textColor: .gray, buttonColor: .white, action: {})
             ButtonLinkView(image: "phone", title: "Phone number", textColor: .black, buttonColor: .white, action: {})
-
+            
             Spacer()
         }
     }
@@ -45,19 +47,19 @@ struct LinksView_Previews: PreviewProvider {
         ZStack {
             Color.white
                 .ignoresSafeArea()
-            LinksView(linksViewIsPresented: .constant(true))
+            LinksView(halfLinksViewIsPresented: .constant(false), linksViewIsPresented: .constant(true))
         }
     }
 }
 
 struct ButtonLinkView: View {
-
+    
     let image: String
     let title: String
     let textColor: Color
     let buttonColor: Color
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
             RoundedRectangle(cornerRadius: 20)
@@ -75,3 +77,47 @@ struct ButtonLinkView: View {
         .padding([.top, .bottom], 6)
     }
 }
+
+
+extension View {
+    func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping() -> SheetView) -> some View {
+        
+        return self
+            .background {
+                HalfSheetHelper(halfLinksViewIsPresented: showSheet, sheetView: sheetView())
+            }
+    }
+}
+
+struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
+    @Binding var halfLinksViewIsPresented: Bool
+    var sheetView: SheetView
+    let controller = UIViewController()
+    
+    func makeUIViewController(context: Context) -> UIViewController {
+        controller.view.backgroundColor = .clear
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        if halfLinksViewIsPresented {
+            
+            let sheetController = CustomHostingController(rootView: sheetView)
+            uiViewController.present(sheetController, animated: true) {
+                DispatchQueue.main.async {
+                    self.halfLinksViewIsPresented.toggle()
+                }
+            }
+        }
+    }
+}
+
+class CustomHostingController<Content: View>: UIHostingController<Content> {
+    override func viewDidLoad() {
+        if let presentationController = presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+            presentationController.prefersGrabberVisible = true
+        }
+    }
+}
+

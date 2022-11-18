@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var linksViewIsPresented = false
+    @State private var halfLinksViewIsPresented = false
 
     var body: some View {
         NavigationView {
@@ -51,12 +52,12 @@ struct ContentView: View {
                     ButtonView(title: "My links", color: .white, action: {
                         linksViewIsPresented.toggle()
                     }
-                    ).sheet(isPresented: $linksViewIsPresented) {
-                        LinksView(linksViewIsPresented: $linksViewIsPresented)
+                    ).fullScreenCover(isPresented: $linksViewIsPresented) {
+                        LinksView(halfLinksViewIsPresented: $halfLinksViewIsPresented, linksViewIsPresented: $linksViewIsPresented)
                     }
                 }
-                .padding()
             }
+            .padding()
             .navigationBarHidden(true)
         }
     }
