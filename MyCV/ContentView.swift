@@ -10,10 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var linksViewIsPresented = false
 
-    @State private var TGHalfLinksViewIsPresented = false
-    @State private var WhatsHalfLinksViewIsPresented = false
-    @State private var VKHalfLinksViewIsPresented = false
-
     var body: some View {
         NavigationView {
             ZStack {
@@ -56,7 +52,7 @@ struct ContentView: View {
                         linksViewIsPresented.toggle()
                     }
                     ).fullScreenCover(isPresented: $linksViewIsPresented) {
-                        LinksView(linksViewIsPresented: $linksViewIsPresented, TGHalfLinksViewIsPresented: $TGHalfLinksViewIsPresented, WhatsHalfLinksViewIsPresented: $WhatsHalfLinksViewIsPresented, VKHalfLinksViewIsPresented: $VKHalfLinksViewIsPresented)
+                        LinksView(linksViewIsPresented: $linksViewIsPresented)
                     }
                 }
             }

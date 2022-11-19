@@ -10,9 +10,12 @@ import SwiftUI
 struct LinksView: View {
     @Binding var linksViewIsPresented: Bool
 
-    @Binding var TGHalfLinksViewIsPresented: Bool
-    @Binding var WhatsHalfLinksViewIsPresented: Bool
-    @Binding var VKHalfLinksViewIsPresented: Bool
+    @State private var halfTGLinksViewIsPresented = false
+    @State private var halfWhatsLinksViewIsPresented = false
+    @State private var halfVKLinksViewIsPresented = false
+
+    @State private var mailConfirmationDialogIsPresented = false
+    @State private var phoneConfirmationDialogIsPresented = false
 
     var body: some View {
 
@@ -31,22 +34,36 @@ struct LinksView: View {
 
             Spacer()
 
-            ButtonLinkView(image: "message", title: "Telegram", textColor: .blue, buttonColor: .white, action: {TGHalfLinksViewIsPresented.toggle()}).halfSheet(showSheet: $TGHalfLinksViewIsPresented) {
+            ButtonLinkView(image: "message", title: "Telegram", textColor: .blue, buttonColor: .white, action: {halfTGLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfTGLinksViewIsPresented) {
                 QrCodeView(image: "TG")
             }
-            ButtonLinkView(image: "message", title: "WhatsApp", textColor: .green, buttonColor: .white, action: {WhatsHalfLinksViewIsPresented.toggle()}).halfSheet(showSheet: $WhatsHalfLinksViewIsPresented) {
+            ButtonLinkView(image: "message", title: "WhatsApp", textColor: .green, buttonColor: .white, action: {halfWhatsLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
                 QrCodeView(image: "Whats")
             }
-            ButtonLinkView(image: "message", title: "VK", textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0), buttonColor: .white, action: {VKHalfLinksViewIsPresented.toggle()}).halfSheet(showSheet: $VKHalfLinksViewIsPresented) {
+            ButtonLinkView(image: "message", title: "VK", textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0), buttonColor: .white, action: {halfVKLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfVKLinksViewIsPresented) {
                 QrCodeView(image: "VK")
             }
-            ButtonLinkView(image: "envelope", title: "Email", textColor: .gray, buttonColor: .white, action: {})
-            ButtonLinkView(image: "phone", title: "Phone number", textColor: .black, buttonColor: .white, action: {})
+            ButtonLinkView(image: "envelope", title: "Email", textColor: .gray, buttonColor: .white, action: {mailConfirmationDialogIsPresented.toggle()})
+                .confirmationDialog("Почта", isPresented: $mailConfirmationDialogIsPresented) {
+                    Button("Скопировать") {UIPasteboard.general.string = "vasiliystartsev@gmail.com"}
+                    Button("Отмена", role: .cancel) {}
+                } message: {
+                    Text("\(Image(systemName: "envelope")) vasiliystartsev@gmail.com")
+                }
 
+            ButtonLinkView(image: "phone", title: "Phone number", textColor: .black, buttonColor: .white, action: {phoneConfirmationDialogIsPresented.toggle()})
+                .confirmationDialog("Номер", isPresented: $phoneConfirmationDialogIsPresented) {
+                    Button("Скопировать") {UIPasteboard.general.string = "+7 (985) 808-90-07"}
+                    Button("Отмена", role: .cancel) {}
+                } message: {
+                    Text("\(Image(systemName: "phone")) +7 (985) 808-90-07")
+                }
             Spacer()
         }
     }
 }
+
+
 
 
 struct LinksView_Previews: PreviewProvider {
@@ -54,7 +71,7 @@ struct LinksView_Previews: PreviewProvider {
         ZStack {
             Color.white
                 .ignoresSafeArea()
-            LinksView(linksViewIsPresented: .constant(true), TGHalfLinksViewIsPresented: .constant(false), WhatsHalfLinksViewIsPresented: .constant(false), VKHalfLinksViewIsPresented: .constant(false))
+            LinksView(linksViewIsPresented: .constant(true))
         }
     }
 }
