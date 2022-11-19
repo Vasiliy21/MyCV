@@ -59,6 +59,7 @@ struct LinksView: View {
                     urlLink: "https://wa.me/qr/UJQ4YNM3NFYNG1",
                     codeAction: {
                         halfWhatsLinksViewIsPresented.toggle()
+                        UIScreen.main.brightness = CGFloat(0.5)
                     })
                 .halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
                     QrCodeView(image: "Whats")
@@ -72,6 +73,7 @@ struct LinksView: View {
                     urlLink: "https://vk.com/vasiliystartsev1",
                     codeAction: {
                         halfVKLinksViewIsPresented.toggle()
+                        UIScreen.main.brightness = CGFloat(1)
                     })
                 .halfSheet(showSheet: $halfVKLinksViewIsPresented) {
                     QrCodeView(image: "VK")
@@ -86,13 +88,13 @@ struct LinksView: View {
                         mailConfirmationDialogIsPresented.toggle()
                     })
                 .confirmationDialog(
-                    "Почта",
+                    "Mail",
                     isPresented: $mailConfirmationDialogIsPresented,
                     titleVisibility: .visible) {
-                        Button("Скопировать") {
+                        Button("Copy") {
                             UIPasteboard.general.string = "vasiliystartsev@gmail.com"
                         }
-                        Button("Отмена", role: .cancel) {}
+                        Button("Cancel", role: .cancel) {}
                     } message: {
                         Text("vasiliystartsev@gmail.com")
                     }
@@ -106,13 +108,13 @@ struct LinksView: View {
                         phoneConfirmationDialogIsPresented.toggle()
                     })
                 .confirmationDialog(
-                    "Номер",
+                    "Phone number",
                     isPresented: $phoneConfirmationDialogIsPresented,
                     titleVisibility: .visible) {
-                        Button("Скопировать") {
+                        Button("Copy") {
                             UIPasteboard.general.string = "+7 (985) 808-90-07"
                         }
-                        Button("Отмена", role: .cancel) {}
+                        Button("Cancel", role: .cancel) {}
                     } message: {
                         Text("+7 (985) 808-90-07")
                     }

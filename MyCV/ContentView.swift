@@ -32,7 +32,7 @@ struct ContentView: View {
                     Spacer()
                     
                     NavigationLink(destination: ThemesListView(), label: {
-                        ButtonForNavigationLink(buttonTitle: "Curriculum vitae")
+                        ButtonForNavigationLink(buttonTitle: "CV")
                     })
                     
                     NavigationLink(destination: ThemesListView(), label: {
