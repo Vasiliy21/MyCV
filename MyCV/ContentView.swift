@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var linksViewIsPresented = false
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,15 +20,7 @@ struct ContentView: View {
                     .scaleEffect(1.2)
                     .blur(radius: 2)
                 VStack {
-                    Image("Me")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .scaleEffect(1.7)
-                        .frame(width: 300, height: 300)
-                        .offset(x: -15, y: -110)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(lineWidth: 7))
-                        .foregroundColor(.white)
+                    CustomPhotoView()
                     Text("Vasiliy Startsev")
                         .fontWeight(.heavy)
                         .font(.title)
@@ -36,18 +28,17 @@ struct ContentView: View {
                     Text("IOS developer")
                         .font(.title2)
                         .foregroundColor(.white)
-
+                    
                     Spacer()
-
+                    
                     NavigationLink(destination: ThemesListView(), label: {
-                        Text("Hard skills")
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.white)
-                            .frame(width: UIScreen.main.bounds.width - 27, height: 50)
-                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 4))
+                        ButtonForNavigationLink(buttonTitle: "Curriculum vitae")
                     })
-                    .navigationTitle("My CV")
+                    
+                    NavigationLink(destination: ThemesListView(), label: {
+                        ButtonForNavigationLink(buttonTitle: "Hard skills")
+                    })
+                    
                     ButtonView(title: "My links", color: .white, action: {
                         linksViewIsPresented.toggle()
                     }
@@ -57,6 +48,7 @@ struct ContentView: View {
                 }
             }
             .padding()
+            .navigationTitle("My CV")
             .navigationBarHidden(true)
         }
     }
@@ -66,5 +58,36 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct CustomPhotoView: View {
+    var body: some View {
+        Image("Me")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .scaleEffect(1.7)
+            .frame(width: 300, height: 300)
+            .offset(x: -15, y: -110)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(lineWidth: 7))
+            .foregroundColor(.white)
+    }
+}
+
+struct ButtonForNavigationLink: View {
+    
+    let buttonTitle: String
+    
+    var body: some View {
+        Text(buttonTitle)
+            .font(.title)
+            .fontWeight(.heavy)
+            .foregroundColor(.white)
+            .frame(width: UIScreen.main.bounds.width - 27, height: 50)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.white, lineWidth: 4))
+            .padding(.top, 15)
     }
 }

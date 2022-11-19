@@ -31,34 +31,86 @@ struct LinksView: View {
                 .padding()
             }
 
+            Spacer()
+
+            ButtonLinkView(
+                image: "message",
+                title: "Telegram",
+                textColor: .blue,
+                buttonColor: .white,
+                action: {
+                    halfTGLinksViewIsPresented.toggle()
+                })
+            .halfSheet(showSheet: $halfTGLinksViewIsPresented) {
+                    QrCodeView(image: "TG")
+                }
+
+            ButtonLinkView(
+                image: "message",
+                title: "WhatsApp",
+                textColor: .green,
+                buttonColor: .white,
+                action: {
+                    halfWhatsLinksViewIsPresented.toggle()
+                })
+            .halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
+                    QrCodeView(image: "Whats")
+                }
+            .padding()
+
+            ButtonLinkView(
+                image: "message",
+                title: "VK",
+                textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0),
+                buttonColor: .white, action: {
+                    halfVKLinksViewIsPresented.toggle()
+                })
+            .halfSheet(showSheet: $halfVKLinksViewIsPresented) {
+                    QrCodeView(image: "VK")
+                }
+
+            ButtonLinkView(
+                image: "envelope",
+                title: "Email",
+                textColor: .gray,
+                buttonColor: .white,
+                action: {
+                    mailConfirmationDialogIsPresented.toggle()
+                })
+            .confirmationDialog(
+                "Почта",
+                isPresented: $mailConfirmationDialogIsPresented,
+                titleVisibility: .visible) {
+                    Button("Скопировать") {
+                        UIPasteboard.general.string = "vasiliystartsev@gmail.com"
+                    }
+                    Button("Отмена", role: .cancel) {}
+                } message: {
+                    Text("vasiliystartsev@gmail.com")
+                }
+
+            ButtonLinkView(
+                image: "phone",
+                title: "Phone number",
+                textColor: .black,
+                buttonColor: .white,
+                action: {
+                    phoneConfirmationDialogIsPresented.toggle()
+                })
+                .confirmationDialog(
+                    "Номер",
+                    isPresented: $phoneConfirmationDialogIsPresented,
+                    titleVisibility: .visible) {
+                    Button("Скопировать") {
+                        UIPasteboard.general.string = "+7 (985) 808-90-07"
+                    }
+                    Button("Отмена", role: .cancel) {}
+                } message: {
+                    Text("+7 (985) 808-90-07")
+                }
 
             Spacer()
 
-            ButtonLinkView(image: "message", title: "Telegram", textColor: .blue, buttonColor: .white, action: {halfTGLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfTGLinksViewIsPresented) {
-                QrCodeView(image: "TG")
-            }
-            ButtonLinkView(image: "message", title: "WhatsApp", textColor: .green, buttonColor: .white, action: {halfWhatsLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
-                QrCodeView(image: "Whats")
-            }
-            ButtonLinkView(image: "message", title: "VK", textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0), buttonColor: .white, action: {halfVKLinksViewIsPresented.toggle()}).halfSheet(showSheet: $halfVKLinksViewIsPresented) {
-                QrCodeView(image: "VK")
-            }
-            ButtonLinkView(image: "envelope", title: "Email", textColor: .gray, buttonColor: .white, action: {mailConfirmationDialogIsPresented.toggle()})
-                .confirmationDialog("Почта", isPresented: $mailConfirmationDialogIsPresented) {
-                    Button("Скопировать") {UIPasteboard.general.string = "vasiliystartsev@gmail.com"}
-                    Button("Отмена", role: .cancel) {}
-                } message: {
-                    Text("\(Image(systemName: "envelope")) vasiliystartsev@gmail.com")
-                }
-
-            ButtonLinkView(image: "phone", title: "Phone number", textColor: .black, buttonColor: .white, action: {phoneConfirmationDialogIsPresented.toggle()})
-                .confirmationDialog("Номер", isPresented: $phoneConfirmationDialogIsPresented) {
-                    Button("Скопировать") {UIPasteboard.general.string = "+7 (985) 808-90-07"}
-                    Button("Отмена", role: .cancel) {}
-                } message: {
-                    Text("\(Image(systemName: "phone")) +7 (985) 808-90-07")
-                }
-            Spacer()
         }
     }
 }
