@@ -18,99 +18,108 @@ struct LinksView: View {
     @State private var phoneConfirmationDialogIsPresented = false
 
     var body: some View {
+        ZStack {
+            Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1))
+                .ignoresSafeArea()
 
-        VStack {
-            HStack {
+            VStack {
+                HStack {
+                    Spacer()
+
+                    Button(action: { linksViewIsPresented.toggle()
+                    }) {
+                        Image(systemName: "multiply")
+                            .font(.largeTitle)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 16)
+                    }
+                }
+
                 Spacer()
 
-                Button("Back") {
-                    linksViewIsPresented.toggle()
-                }
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.roundedRectangle)
-                .padding()
-            }
-
-            Spacer()
-
-            ButtonLinkView(
-                image: "message",
-                title: "Telegram",
-                textColor: .blue,
-                buttonColor: .white,
-                action: {
-                    halfTGLinksViewIsPresented.toggle()
-                })
-            .halfSheet(showSheet: $halfTGLinksViewIsPresented) {
+                ButtonsLinksView(
+                    image: "message",
+                    title: "Telegram",
+                    textColor: Color(#colorLiteral(red: 0.2296479344, green: 0.7099092603, blue: 0.9512149692, alpha: 1)),
+                    buttonColor: .white,
+                    urlLink: "https://t.me/vasiliystar",
+                    codeAction: {
+                        halfTGLinksViewIsPresented.toggle()
+                        UIScreen.main.brightness = CGFloat(0.1)
+                    })
+                .halfSheet(showSheet: $halfTGLinksViewIsPresented) {
                     QrCodeView(image: "TG")
                 }
 
-            ButtonLinkView(
-                image: "message",
-                title: "WhatsApp",
-                textColor: .green,
-                buttonColor: .white,
-                action: {
-                    halfWhatsLinksViewIsPresented.toggle()
-                })
-            .halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
+                ButtonsLinksView(
+                    image: "message",
+                    title: "WhatsApp",
+                    textColor: Color(#colorLiteral(red: 0, green: 0.8307308555, blue: 0.007691053208, alpha: 1)),
+                    buttonColor: .white,
+                    urlLink: "https://wa.me/qr/UJQ4YNM3NFYNG1",
+                    codeAction: {
+                        halfWhatsLinksViewIsPresented.toggle()
+                    })
+                .halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
                     QrCodeView(image: "Whats")
                 }
-            .padding()
 
-            ButtonLinkView(
-                image: "message",
-                title: "VK",
-                textColor: Color(hue: 0.611, saturation: 1.0, brightness: 1.0),
-                buttonColor: .white, action: {
-                    halfVKLinksViewIsPresented.toggle()
-                })
-            .halfSheet(showSheet: $halfVKLinksViewIsPresented) {
+                ButtonsLinksView(
+                    image: "message",
+                    title: "VK",
+                    textColor: Color(#colorLiteral(red: 0, green: 0.4684073925, blue: 0.9988809228, alpha: 1)),
+                    buttonColor: .white,
+                    urlLink: "https://vk.com/vasiliystartsev1",
+                    codeAction: {
+                        halfVKLinksViewIsPresented.toggle()
+                    })
+                .halfSheet(showSheet: $halfVKLinksViewIsPresented) {
                     QrCodeView(image: "VK")
                 }
 
-            ButtonLinkView(
-                image: "envelope",
-                title: "Email",
-                textColor: .gray,
-                buttonColor: .white,
-                action: {
-                    mailConfirmationDialogIsPresented.toggle()
-                })
-            .confirmationDialog(
-                "Почта",
-                isPresented: $mailConfirmationDialogIsPresented,
-                titleVisibility: .visible) {
-                    Button("Скопировать") {
-                        UIPasteboard.general.string = "vasiliystartsev@gmail.com"
+                ButtonLinkView(
+                    image: "envelope",
+                    title: "Email",
+                    textColor: .gray,
+                    buttonColor: .white,
+                    action: {
+                        mailConfirmationDialogIsPresented.toggle()
+                    })
+                .confirmationDialog(
+                    "Почта",
+                    isPresented: $mailConfirmationDialogIsPresented,
+                    titleVisibility: .visible) {
+                        Button("Скопировать") {
+                            UIPasteboard.general.string = "vasiliystartsev@gmail.com"
+                        }
+                        Button("Отмена", role: .cancel) {}
+                    } message: {
+                        Text("vasiliystartsev@gmail.com")
                     }
-                    Button("Отмена", role: .cancel) {}
-                } message: {
-                    Text("vasiliystartsev@gmail.com")
-                }
 
-            ButtonLinkView(
-                image: "phone",
-                title: "Phone number",
-                textColor: .black,
-                buttonColor: .white,
-                action: {
-                    phoneConfirmationDialogIsPresented.toggle()
-                })
+                ButtonLinkView(
+                    image: "phone",
+                    title: "Phone number",
+                    textColor: .black,
+                    buttonColor: .white,
+                    action: {
+                        phoneConfirmationDialogIsPresented.toggle()
+                    })
                 .confirmationDialog(
                     "Номер",
                     isPresented: $phoneConfirmationDialogIsPresented,
                     titleVisibility: .visible) {
-                    Button("Скопировать") {
-                        UIPasteboard.general.string = "+7 (985) 808-90-07"
+                        Button("Скопировать") {
+                            UIPasteboard.general.string = "+7 (985) 808-90-07"
+                        }
+                        Button("Отмена", role: .cancel) {}
+                    } message: {
+                        Text("+7 (985) 808-90-07")
                     }
-                    Button("Отмена", role: .cancel) {}
-                } message: {
-                    Text("+7 (985) 808-90-07")
-                }
 
-            Spacer()
+                Spacer()
 
+            }
         }
     }
 }
@@ -139,16 +148,15 @@ struct ButtonLinkView: View {
     var body: some View {
         Button(action: action) {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: UIScreen.main.bounds.width - 42, height: 65)
-                .foregroundColor(buttonColor)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 3).foregroundColor(textColor))
+                .frame(width: UIScreen.main.bounds.width - 22, height: 65)
+                .foregroundColor(textColor)
                 .overlay(
                     HStack(spacing: 10) {
                         Image(systemName: image)
                         Text(title)
                     }
                         .font(.largeTitle)
-                        .foregroundColor(textColor))
+                        .foregroundColor(buttonColor))
         }
         .padding([.top, .bottom], 6)
     }
