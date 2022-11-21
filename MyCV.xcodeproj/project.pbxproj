@@ -67,9 +67,9 @@
 		FFC82BAE28ED7F3000BA7205 /* MyCV */ = {
 			isa = PBXGroup;
 			children = (
+				FFC82BB128ED7F3000BA7205 /* ContentView.swift */,
 				FF33DA6E29294992001C867C /* ButtonsLinksView.swift */,
 				FFC82BAF28ED7F3000BA7205 /* MyCVApp.swift */,
-				FFC82BB128ED7F3000BA7205 /* ContentView.swift */,
 				FFC82BBD28EDBA7400BA7205 /* ButtonView.swift */,
 				FF42D48328EDCCFD00FA80A4 /* LinksView.swift */,
 				FFB548152924D8850005715E /* ThemesListView.swift */,

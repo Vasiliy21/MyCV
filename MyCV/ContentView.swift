@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+
     @State private var linksViewIsPresented = false
     
     var body: some View {
@@ -24,22 +25,22 @@ struct ContentView: View {
                     Text("Vasiliy Startsev")
                         .fontWeight(.heavy)
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(.accentColor.self)
                     Text("IOS developer")
                         .font(.title2)
-                        .foregroundColor(.white)
-                    
+                        .foregroundColor(.accentColor.self)
+
                     Spacer()
-                    
+
                     NavigationLink(destination: ThemesListView(), label: {
                         ButtonForNavigationLink(buttonTitle: "CV")
                     })
-                    
+
                     NavigationLink(destination: ThemesListView(), label: {
                         ButtonForNavigationLink(buttonTitle: "Hard skills")
                     })
-                    
-                    ButtonView(title: "My links", color: .white, action: {
+
+                    ButtonView(title: "My links", color: .accentColor.self, action: {
                         linksViewIsPresented.toggle()
                     }
                     ).fullScreenCover(isPresented: $linksViewIsPresented) {
@@ -71,23 +72,24 @@ struct CustomPhotoView: View {
             .offset(x: -15, y: -110)
             .clipShape(Circle())
             .overlay(Circle().stroke(lineWidth: 7))
-            .foregroundColor(.white)
+            .foregroundColor(.accentColor.self)
     }
 }
 
+
 struct ButtonForNavigationLink: View {
-    
+
     let buttonTitle: String
-    
+
     var body: some View {
         Text(buttonTitle)
             .font(.title)
             .fontWeight(.heavy)
-            .foregroundColor(.white)
+            .foregroundColor(.accentColor.self)
             .frame(width: UIScreen.main.bounds.width - 27, height: 50)
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.white, lineWidth: 4))
+                    .stroke(Color.accentColor.self, lineWidth: 4))
             .padding(.top, 15)
     }
 }

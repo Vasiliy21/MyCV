@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct LinksView: View {
     @Binding var linksViewIsPresented: Bool
