@@ -19,15 +19,15 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
                     .scaleEffect(1.2)
-                    .blur(radius: 2)
+                    .blur(radius: 4)
                 VStack {
                     CustomPhotoView()
                     Text("Vasiliy Startsev")
                         .fontWeight(.heavy)
-                        .font(.title)
+                        .font(.largeTitle)
                         .foregroundColor(.accentColor.self)
                     Text("IOS developer")
-                        .font(.title2)
+                        .font(.title)
                         .foregroundColor(.accentColor.self)
 
                     Spacer()
@@ -83,13 +83,11 @@ struct ButtonForNavigationLink: View {
 
     var body: some View {
         Text(buttonTitle)
-            .font(.title)
+            .font(.largeTitle)
             .fontWeight(.heavy)
             .foregroundColor(.accentColor.self)
             .frame(width: UIScreen.main.bounds.width - 27, height: 50)
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.accentColor.self, lineWidth: 4))
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.accentColor.self, lineWidth: 5))
             .padding(.top, 15)
     }
 }

@@ -15,14 +15,13 @@ struct BlockView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .opacity(0.1)
-            RoundedRectangle(cornerRadius: 20, style: .circular).stroke(Color .black, lineWidth: 5)
+            RoundedRectangle(cornerRadius: 20, style: .circular).stroke(Color .accentColor.self, lineWidth: 5)
             Text(title)
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .padding()
         }
         .frame(width: 160, height: 150)
-
     }
 }
 
