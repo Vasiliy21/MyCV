@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct QrCodeView: View {
-
+    
     let image: String
-
+    
     var body: some View {
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .scaleEffect(1.3)
-                .clipShape(Rectangle())
-                .frame(width: 310, height: 310)
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 5))
+        Image(image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .scaleEffect(1.3)
+            .clipShape(Rectangle())
+            .frame(width: 310, height: 310)
+            .padding()
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 5))
     }
 }
 

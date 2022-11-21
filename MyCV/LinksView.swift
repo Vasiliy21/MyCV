@@ -17,6 +17,8 @@ struct LinksView: View {
     @State private var mailConfirmationDialogIsPresented = false
     @State private var phoneConfirmationDialogIsPresented = false
 
+    private let currentScreenBrightness = UIScreen.main.brightness
+
     var body: some View {
         ZStack {
             Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1))
@@ -24,9 +26,11 @@ struct LinksView: View {
 
             VStack {
                 HStack {
+
                     Spacer()
 
-                    Button(action: { linksViewIsPresented.toggle()
+                    Button(action: {
+                        linksViewIsPresented.toggle()
                     }) {
                         Image(systemName: "multiply")
                             .font(.largeTitle)
@@ -45,12 +49,15 @@ struct LinksView: View {
                     urlLink: "https://t.me/vasiliystar",
                     codeAction: {
                         halfTGLinksViewIsPresented.toggle()
-                        UIScreen.main.brightness = CGFloat(0.1)
+                        UIScreen.main.brightness = CGFloat(1)
                     })
                 .halfSheet(showSheet: $halfTGLinksViewIsPresented) {
                     QrCodeView(image: "TG")
+                        .onDisappear() {
+                            UIScreen.main.brightness = currentScreenBrightness
+                        }
                 }
-
+                
                 ButtonsLinksView(
                     image: "message",
                     title: "WhatsApp",
@@ -59,10 +66,13 @@ struct LinksView: View {
                     urlLink: "https://wa.me/qr/UJQ4YNM3NFYNG1",
                     codeAction: {
                         halfWhatsLinksViewIsPresented.toggle()
-                        UIScreen.main.brightness = CGFloat(0.5)
+                        UIScreen.main.brightness = CGFloat(1)
                     })
                 .halfSheet(showSheet: $halfWhatsLinksViewIsPresented) {
                     QrCodeView(image: "Whats")
+                        .onDisappear() {
+                            UIScreen.main.brightness = currentScreenBrightness
+                        }
                 }
 
                 ButtonsLinksView(
@@ -77,6 +87,9 @@ struct LinksView: View {
                     })
                 .halfSheet(showSheet: $halfVKLinksViewIsPresented) {
                     QrCodeView(image: "VK")
+                        .onDisappear() {
+                            UIScreen.main.brightness = currentScreenBrightness
+                        }
                 }
 
                 ButtonLinkView(
@@ -164,7 +177,6 @@ struct ButtonLinkView: View {
     }
 }
 
-
 extension View {
     func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping() -> SheetView) -> some View {
 
@@ -187,7 +199,6 @@ struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         if halfLinksViewIsPresented {
-
             let sheetController = CustomHostingController(rootView: sheetView)
             uiViewController.present(sheetController, animated: true) {
                 DispatchQueue.main.async {
@@ -198,7 +209,8 @@ struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
     }
 }
 
-class CustomHostingController<Content: View>: UIHostingController<Content> {
+class CustomHostingController<Content: View>:
+    UIHostingController<Content> {
     override func viewDidLoad() {
         if let presentationController = presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]

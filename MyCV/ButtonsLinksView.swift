@@ -66,7 +66,6 @@ struct ButtonsLinksView: View {
         .padding([.top, .bottom], 6)
     }
 }
-
 struct ButtonsLinksView_Previews: PreviewProvider {
     static var previews: some View {
         ButtonsLinksView(image: "phone", title: "Phone", textColor: .green, buttonColor: .white, urlLink: "m", codeAction: {})
