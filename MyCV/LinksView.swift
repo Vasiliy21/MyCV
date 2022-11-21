@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct LinksView: View {
     @Binding var linksViewIsPresented: Bool
@@ -21,7 +22,12 @@ struct LinksView: View {
 
     var body: some View {
         ZStack {
-            Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1))
+            Color(#colorLiteral(
+                red: 0.921431005,
+                green: 0.9214526415,
+                blue: 0.9214410186,
+                alpha: 1
+            ))
                 .ignoresSafeArea()
 
             VStack {
@@ -44,7 +50,11 @@ struct LinksView: View {
                 ButtonsLinksView(
                     image: "message",
                     title: "Telegram",
-                    textColor: Color(#colorLiteral(red: 0.2296479344, green: 0.7099092603, blue: 0.9512149692, alpha: 1)),
+                    textColor: Color(#colorLiteral(
+                        red: 0.2296479344,
+                        green: 0.7099092603,
+                        blue: 0.9512149692,
+                        alpha: 1)),
                     buttonColor: .white,
                     urlLink: "https://t.me/vasiliystar",
                     codeAction: {
@@ -61,7 +71,12 @@ struct LinksView: View {
                 ButtonsLinksView(
                     image: "message",
                     title: "WhatsApp",
-                    textColor: Color(#colorLiteral(red: 0, green: 0.8307308555, blue: 0.007691053208, alpha: 1)),
+                    textColor: Color(#colorLiteral(
+                        red: 0,
+                        green: 0.8307308555,
+                        blue: 0.007691053208,
+                        alpha: 1
+                    )),
                     buttonColor: .white,
                     urlLink: "https://wa.me/qr/UJQ4YNM3NFYNG1",
                     codeAction: {
@@ -78,7 +93,12 @@ struct LinksView: View {
                 ButtonsLinksView(
                     image: "message",
                     title: "VK",
-                    textColor: Color(#colorLiteral(red: 0, green: 0.4684073925, blue: 0.9988809228, alpha: 1)),
+                    textColor: Color(#colorLiteral(
+                        red: 0,
+                        green: 0.4684073925,
+                        blue: 0.9988809228,
+                        alpha: 1
+                    )),
                     buttonColor: .white,
                     urlLink: "https://vk.com/vasiliystartsev1",
                     codeAction: {
