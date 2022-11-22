@@ -20,7 +20,7 @@ struct MyCVApp: App {
                 ZStack {
                     if showLaunchView {
                         LaunchView(showLaunchView: $showLaunchView)
-                            .transition(AnyTransition.slide.animation(.easeIn(duration: 3)))
+                            .transition(.move(edge: .trailing))
                     }
                 }
                 .zIndex(2)
