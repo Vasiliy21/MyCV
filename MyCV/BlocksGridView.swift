@@ -11,7 +11,7 @@ struct BlocksGridView: View {
     
     let themeName: String
     let blocks: [Block]
-    private let columns = [GridItem(.adaptive(minimum: 160))]
+    private let columns = [GridItem(.adaptive(minimum: UIScreen.main.bounds.width - 30))]
     
     var body: some View {
             ScrollView {
@@ -22,7 +22,6 @@ struct BlocksGridView: View {
                 }
             }
             .navigationTitle(themeName)
-            .padding(.horizontal)
     }
 }
 

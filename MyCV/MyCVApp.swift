@@ -9,9 +9,23 @@ import SwiftUI
 
 @main
 struct MyCVApp: App {
+
+    @State private var showLaunchView = true
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                ContentView()
+
+                ZStack {
+                    if showLaunchView {
+                        LaunchView(showLaunchView: $showLaunchView)
+                            .transition(AnyTransition.slide.animation(.easeIn(duration: 3)))
+                    }
+                }
+                .zIndex(2)
+            }
+            .zIndex(1)
         }
     }
 }

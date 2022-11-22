@@ -16,11 +16,11 @@ struct ButtonView: View {
     var body: some View {
             Button(action: action) {
                 Text(title)
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.heavy)
                     .foregroundColor(color)
                     .frame(width: UIScreen.main.bounds.width - 27, height: 50)
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(color, lineWidth: 5))
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(color, lineWidth: 4))
             }
         .padding(.top, 15)
     }

@@ -12,6 +12,8 @@
 		FF1CC76A2924D0B6008F18D3 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC7692924D0B6008F18D3 /* BlockView.swift */; };
 		FF33DA6F29294992001C867C /* ButtonsLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33DA6E29294992001C867C /* ButtonsLinksView.swift */; };
 		FF42D48428EDCCFD00FA80A4 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42D48328EDCCFD00FA80A4 /* LinksView.swift */; };
+		FF47311A292D2E0B00DEEA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF473119292D2E0B00DEEA63 /* LaunchScreen.storyboard */; };
+		FF47311C292D325100DEEA63 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47311B292D325100DEEA63 /* LaunchView.swift */; };
 		FF7FC679292C07F200628410 /* CVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FC678292C07F200628410 /* CVView.swift */; };
 		FFB548162924D8850005715E /* ThemesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB548152924D8850005715E /* ThemesListView.swift */; };
 		FFB5481A2926D5530005715E /* QrCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB548192926D5520005715E /* QrCodeView.swift */; };
@@ -28,6 +30,9 @@
 		FF1CC7692924D0B6008F18D3 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		FF33DA6E29294992001C867C /* ButtonsLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsLinksView.swift; sourceTree = "<group>"; };
 		FF42D48328EDCCFD00FA80A4 /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
+		FF473118292D26F800DEEA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FF473119292D2E0B00DEEA63 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF47311B292D325100DEEA63 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		FF7FC678292C07F200628410 /* CVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVView.swift; sourceTree = "<group>"; };
 		FFB548152924D8850005715E /* ThemesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesListView.swift; sourceTree = "<group>"; };
 		FFB548192926D5520005715E /* QrCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeView.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		FFC82BAE28ED7F3000BA7205 /* MyCV */ = {
 			isa = PBXGroup;
 			children = (
+				FF473118292D26F800DEEA63 /* Info.plist */,
 				FFC82BB128ED7F3000BA7205 /* ContentView.swift */,
 				FF33DA6E29294992001C867C /* ButtonsLinksView.swift */,
 				FFC82BAF28ED7F3000BA7205 /* MyCVApp.swift */,
@@ -77,6 +83,8 @@
 				FFB548152924D8850005715E /* ThemesListView.swift */,
 				FFB548192926D5520005715E /* QrCodeView.swift */,
 				FF1CC7652924CD3C008F18D3 /* BlocksGridView.swift */,
+				FF473119292D2E0B00DEEA63 /* LaunchScreen.storyboard */,
+				FF47311B292D325100DEEA63 /* LaunchView.swift */,
 				FF1CC7692924D0B6008F18D3 /* BlockView.swift */,
 				FF7FC678292C07F200628410 /* CVView.swift */,
 				FF1CC7672924CE55008F18D3 /* Blocks.swift */,
@@ -152,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF47311A292D2E0B00DEEA63 /* LaunchScreen.storyboard in Resources */,
 				FFC82BB728ED7F3700BA7205 /* Preview Assets.xcassets in Resources */,
 				FFC82BB428ED7F3700BA7205 /* Assets.xcassets in Resources */,
 			);
@@ -165,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC82BB228ED7F3000BA7205 /* ContentView.swift in Sources */,
+				FF47311C292D325100DEEA63 /* LaunchView.swift in Sources */,
 				FF1CC7662924CD3C008F18D3 /* BlocksGridView.swift in Sources */,
 				FFC82BB028ED7F3000BA7205 /* MyCVApp.swift in Sources */,
 				FF1CC7682924CE55008F18D3 /* Blocks.swift in Sources */,
@@ -307,9 +317,10 @@
 				DEVELOPMENT_TEAM = 9PK8S4WFHD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -337,9 +348,10 @@
 				DEVELOPMENT_TEAM = 9PK8S4WFHD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

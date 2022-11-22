@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "1211.WWDC_2019_Light-1024w-1366h@2x~ipad.png",
+      "filename" : "Appearance_Light.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,11 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "1212.WWDC_2019_Dark-1024w-1366h@2x~ipad.png",
+      "filename" : "Appearance_Dark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Appearance_Light 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -27,10 +28,12 @@
           "value" : "dark"
         }
       ],
+      "filename" : "Appearance_Dark 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Appearance_Light 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -41,6 +44,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "Appearance_Dark 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
