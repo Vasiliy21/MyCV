@@ -22,7 +22,7 @@ struct ButtonView: View {
                     .frame(width: UIScreen.main.bounds.width - 27, height: 50)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(color, lineWidth: 4))
             }
-        .padding(.top, 15)
+        .padding(.top, 12)
     }
 }
 

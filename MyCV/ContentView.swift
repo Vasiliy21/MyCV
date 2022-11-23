@@ -32,7 +32,7 @@ struct ContentView: View {
 
                     Spacer()
 
-                    NavigationLink(destination: ThemesListView(), label: {
+                    NavigationLink(destination: CVView(), label: {
                         ButtonForNavigationLink(buttonTitle: "CV")
                     })
 
@@ -88,6 +88,6 @@ struct ButtonForNavigationLink: View {
             .foregroundColor(.accentColor.self)
             .frame(width: UIScreen.main.bounds.width - 27, height: 50)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.accentColor.self, lineWidth: 4))
-            .padding(.top, 15)
+            .padding(.top, 12)
     }
 }
