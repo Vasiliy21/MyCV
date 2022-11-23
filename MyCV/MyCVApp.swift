@@ -16,16 +16,18 @@ struct MyCVApp: App {
         WindowGroup {
             ZStack {
                 ContentView()
+                    .zIndex(1)
+
 
                 ZStack {
                     if showLaunchView {
                         LaunchView(showLaunchView: $showLaunchView)
-                            .transition(.move(edge: .trailing))
+                            .transition(.move(edge: .top))
                     }
                 }
+                .animation(.linear, value: showLaunchView)
                 .zIndex(2)
             }
-            .zIndex(1)
         }
     }
 }
