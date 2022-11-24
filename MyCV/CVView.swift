@@ -50,20 +50,22 @@ struct CVView: View {
             .padding(.bottom)
 
             TitleView(title: "Опыт работы")
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text("СТАЖЁР")
-                        .font(.title2)
-                        .fontWeight(.medium)
-                    Text("Дивизион «ТРАНЗАКЦИОННЫЙ БИЗНЕС»")
-                        .font(.title3)
-                        .fontWeight(.medium)
-                    Text("Публичное акционерное общество «Сбербанк России»")
+            VStack(alignment: .leading) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text("СТАЖЁР")
+                            .font(.title2)
+                            .fontWeight(.medium)
+                        Text("Дивизион «ТРАНЗАКЦИОННЫЙ БИЗНЕС»")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                        Text("Публичное акционерное общество «Сбербанк России»")
+                    }
+                    Spacer()
+                    Text("июнь 2020г. - июнь 2024г.")
                 }
-                Spacer()
-                Text("июнь 2020г. - июнь 2024г.")
-            }
                 Text("\nРаботал с Макросами (VBA) в Exel | Делал сводные таблицы и писал функции в Exel | Изучил базовый курс по SQL в Сбершколе")
+            }
 
         }
         .navigationTitle("Curriculum vitae")
