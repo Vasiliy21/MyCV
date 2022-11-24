@@ -57,7 +57,7 @@ struct CVView: View {
                             .font(.title2)
                             .fontWeight(.medium)
                         Text("Дивизион «ТРАНЗАКЦИОННЫЙ БИЗНЕС»")
-                            .font(.title3)
+                            .font(.subheadline)
                             .fontWeight(.medium)
                         Text("Публичное акционерное общество «Сбербанк России»")
                     }
