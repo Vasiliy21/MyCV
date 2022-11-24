@@ -63,7 +63,8 @@ struct CVView: View {
                 Spacer()
                 Text("июнь 2020г. - июнь 2024г.")
             }
-            Text("\nРаботал с Макросами (VBA) в Exel | Делал сводные таблицы и писал функции в Exel | Изучил базовый курс по SQL в Сбершколе")
+                Text("\nРаботал с Макросами (VBA) в Exel | Делал сводные таблицы и писал функции в Exel | Изучил базовый курс по SQL в Сбершколе")
+
         }
         .navigationTitle("Curriculum vitae")
         .padding(.horizontal)
