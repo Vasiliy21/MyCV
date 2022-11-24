@@ -57,9 +57,9 @@ struct CVView: View {
                             .font(.title2)
                             .fontWeight(.medium)
                         Text("Дивизион «ТРАНЗАКЦИОННЫЙ БИЗНЕС»")
-                            .font(.subheadline)
+                            .font(.headline)
                             .fontWeight(.medium)
-                        Text("Публичное акционерное общество «Сбербанк России»")
+                        Text("ПАО «Сбербанк России»")
                     }
                     Spacer()
                     Text("июнь 2020г. - июнь 2024г.")
