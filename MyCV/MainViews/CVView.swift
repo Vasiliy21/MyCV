@@ -10,15 +10,25 @@ import SwiftUI
 struct CVView: View {
     var body: some View {
         ScrollView {
-
+            
             TitleView(title: "Личные данные")
-            Text("Начинающий IOS разработчик. Изучаю Swift на протяжении полутора лет. Прошёл курс по основам Swift.\nУмею работать с документацией. Хочу попасть на работу в большую компанию, чтобы продолжить свой путь в мобильной разработке и стать Senior.")
+            HStack {
+                Text("Начинающий IOS разработчик. Изучаю Swift на протяжении полутора лет. Прошёл курс по основам Swift.\nУмею работать с документацией. Хочу попасть на работу в большую компанию, чтобы продолжить свой путь в мобильной разработке и стать Senior.")
+                
+                Spacer()
+                
+            }
             .padding(.bottom)
-
+            
             TitleView(title: "Основные умения")
-            Text("Foundation | GCD | HIG | InterfaceBuilder | git | Autolayout | CocoaPods | MVC | URLSession | VIPER | ARC | SwiftUI | Unit-тесты | SOLID | UI-тесты | Аккаунт Apple Store | REST API | OperationQueue | UIKit | Clean Swift | Верстка кодом | Alamofire | Принципы ООП | Realm | JSON | Core Data | MVVM | MVP | Moya | Notifications")
+            HStack {
+                Text("Foundation | GCD | HIG | InterfaceBuilder | git | Autolayout | CocoaPods | MVC | URLSession | VIPER | ARC | SwiftUI | Unit-тесты | SOLID | \nUI-тесты | Аккаунт Apple Store | REST API | OperationQueue | UIKit | Clean Swift | \nВерстка кодом | Alamofire | Принципы ООП | Realm | JSON | Core Data | MVVM | MVP | Moya | Notifications")
+                
+                Spacer()
+                
+            }
             .padding(.bottom)
-
+            
             TitleView(title: "Образование")
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
@@ -28,15 +38,15 @@ struct CVView: View {
                             .fontWeight(.medium)
                         Text("Факультет бизнеса «Капитаны» Менеджмент")
                     }
-
+                    
                     Spacer()
-
+                    
                     Text("июнь 2020г. - июнь 2024г.")
                 }
                 Text("\nВ основе программы подготовки лежит учебно-прикладная и практическая работа по проектированию и внедрению собственного бизнес-проекта в инновационной сфере")
             }
             .padding(.bottom)
-
+            
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
@@ -51,7 +61,7 @@ struct CVView: View {
                 Text("\nВ основе программы лежат основные знания для освоения профессии IOS разработчик уровня Junior")
             }
             .padding(.bottom)
-
+            
             TitleView(title: "Опыт работы")
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
@@ -84,7 +94,7 @@ struct CVView_Previews: PreviewProvider {
 struct TitleView: View {
     
     let title: String
-
+    
     var body: some View {
         HStack {
             Text(title)
