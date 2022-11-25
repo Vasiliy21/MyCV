@@ -14,14 +14,17 @@ struct ButtonView: View {
     let action: () -> Void
 
     var body: some View {
-            Button(action: action) {
-                Text(title)
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .foregroundColor(color)
-                    .frame(width: UIScreen.main.bounds.width - 27, height: 50)
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(color, lineWidth: 4))
-            }
+        Button(action: action) {
+            Text(title)
+                .font(.title)
+                .fontWeight(.heavy)
+                .foregroundColor(color)
+                .frame(width: UIScreen.main.bounds.width - 27, height: 50)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(color, lineWidth: 4)
+                )
+        }
         .padding(.top, 12)
     }
 }

@@ -15,7 +15,8 @@ struct BlockView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 40)
                 .opacity(0.1)
-            RoundedRectangle(cornerRadius: 40, style: .continuous).stroke(Color .accentColor.self, lineWidth: 5)
+            RoundedRectangle(cornerRadius: 40, style: .continuous)
+                .stroke(Color .accentColor.self, lineWidth: 5)
             Text(title)
                 .font(.headline)
                 .fontWeight(.medium)
@@ -28,6 +29,8 @@ struct BlockView: View {
 
 struct BlockView_Previews: PreviewProvider {
     static var previews: some View {
-        BlockView(title: "Введение. Константы и переменные. Базовые типы данных")
+        BlockView(
+            title: "Введение. Константы и переменные. Базовые типы данных"
+        )
     }
 }

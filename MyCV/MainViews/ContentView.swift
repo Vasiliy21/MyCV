@@ -40,9 +40,12 @@ struct ContentView: View {
                         ButtonForNavigationLink(buttonTitle: "Hard skills")
                     })
 
-                    ButtonView(title: "My links", color: .accentColor.self, action: {
-                        linksViewIsPresented.toggle()
-                    }
+                    ButtonView(
+                        title: "My links",
+                        color: .accentColor.self,
+                        action: {
+                            linksViewIsPresented.toggle()
+                        }
                     ).fullScreenCover(isPresented: $linksViewIsPresented) {
                         LinksView(linksViewIsPresented: $linksViewIsPresented)
                     }
@@ -76,7 +79,6 @@ struct CustomPhotoView: View {
     }
 }
 
-
 struct ButtonForNavigationLink: View {
 
     let buttonTitle: String
@@ -87,7 +89,10 @@ struct ButtonForNavigationLink: View {
             .fontWeight(.heavy)
             .foregroundColor(.accentColor.self)
             .frame(width: UIScreen.main.bounds.width - 27, height: 50)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.accentColor.self, lineWidth: 4))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.accentColor.self, lineWidth: 4)
+            )
             .padding(.top, 12)
     }
 }

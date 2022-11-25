@@ -54,6 +54,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFBB5DCC2930E074000E8781 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				FFC82BB328ED7F3700BA7205 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		FFBB5DCD2930E0BC000E8781 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FFC82BAF28ED7F3000BA7205 /* MyCVApp.swift */,
+				FF473119292D2E0B00DEEA63 /* LaunchScreen.storyboard */,
+				FF47311B292D325100DEEA63 /* LaunchView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FFBB5DCE2930E1AC000E8781 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF1CC7672924CE55008F18D3 /* Blocks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FFBB5DCF2930E1F9000E8781 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				FFC82BB128ED7F3000BA7205 /* ContentView.swift */,
+				FF7FC678292C07F200628410 /* CVView.swift */,
+				FFB548152924D8850005715E /* ThemesListView.swift */,
+				FF1CC7652924CD3C008F18D3 /* BlocksGridView.swift */,
+				FF42D48328EDCCFD00FA80A4 /* LinksView.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		FFBB5DD02930E6ED000E8781 /* SubViewes */ = {
+			isa = PBXGroup;
+			children = (
+				FFC82BBD28EDBA7400BA7205 /* ButtonView.swift */,
+				FF1CC7692924D0B6008F18D3 /* BlockView.swift */,
+				FF33DA6E29294992001C867C /* ButtonsLinksView.swift */,
+				FFB548192926D5520005715E /* QrCodeView.swift */,
+			);
+			path = SubViewes;
+			sourceTree = "<group>";
+		};
 		FFC82BA328ED7F3000BA7205 = {
 			isa = PBXGroup;
 			children = (
@@ -73,20 +122,11 @@
 		FFC82BAE28ED7F3000BA7205 /* MyCV */ = {
 			isa = PBXGroup;
 			children = (
-				FFC82BB128ED7F3000BA7205 /* ContentView.swift */,
-				FF33DA6E29294992001C867C /* ButtonsLinksView.swift */,
-				FFC82BAF28ED7F3000BA7205 /* MyCVApp.swift */,
-				FFC82BBD28EDBA7400BA7205 /* ButtonView.swift */,
-				FF42D48328EDCCFD00FA80A4 /* LinksView.swift */,
-				FFB548152924D8850005715E /* ThemesListView.swift */,
-				FFB548192926D5520005715E /* QrCodeView.swift */,
-				FF1CC7652924CD3C008F18D3 /* BlocksGridView.swift */,
-				FF473119292D2E0B00DEEA63 /* LaunchScreen.storyboard */,
-				FF47311B292D325100DEEA63 /* LaunchView.swift */,
-				FF1CC7692924D0B6008F18D3 /* BlockView.swift */,
-				FF7FC678292C07F200628410 /* CVView.swift */,
-				FF1CC7672924CE55008F18D3 /* Blocks.swift */,
-				FFC82BB328ED7F3700BA7205 /* Assets.xcassets */,
+				FFBB5DCF2930E1F9000E8781 /* MainViews */,
+				FFBB5DD02930E6ED000E8781 /* SubViewes */,
+				FFBB5DCE2930E1AC000E8781 /* Models */,
+				FFBB5DCD2930E0BC000E8781 /* App */,
+				FFBB5DCC2930E074000E8781 /* Resourses */,
 				FFC82BB528ED7F3700BA7205 /* Preview Content */,
 			);
 			path = MyCV;

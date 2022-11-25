@@ -30,10 +30,12 @@ struct ButtonsLinksView: View {
                 .foregroundColor(buttonColor)
 
                 HStack {
-
                     Button(action: codeAction) {
                         RoundedRectangle(cornerRadius: 20)
-                            .frame(width: UIScreen.main.bounds.width/2 - 22, height: 45)
+                            .frame(
+                                width: UIScreen.main.bounds.width/2 - 22,
+                                height: 45
+                            )
                             .foregroundColor(buttonColor)
                             .overlay(RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(buttonColor))
@@ -48,7 +50,10 @@ struct ButtonsLinksView: View {
 
                     Link(destination: URL(string: urlLink)!) {
                         RoundedRectangle(cornerRadius: 20)
-                            .frame(width: UIScreen.main.bounds.width/2 - 22, height: 45)
+                            .frame(
+                                width: UIScreen.main.bounds.width/2 - 22,
+                                height: 45
+                            )
                             .foregroundColor(buttonColor)
                             .overlay(RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(buttonColor))
@@ -68,6 +73,13 @@ struct ButtonsLinksView: View {
 }
 struct ButtonsLinksView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonsLinksView(image: "phone", title: "Phone", textColor: .green, buttonColor: .white, urlLink: "m", codeAction: {})
+        ButtonsLinksView(
+            image: "phone",
+            title: "Phone",
+            textColor: .green,
+            buttonColor: .white,
+            urlLink: "m",
+            codeAction: {}
+        )
     }
 }

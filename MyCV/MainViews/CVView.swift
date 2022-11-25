@@ -12,12 +12,25 @@ struct CVView: View {
         ScrollView {
 
             TitleView(title: "Личные данные")
-            Text("Начинающий IOS разработчик. Изучаю Swift на протяжении года. Почти прошёл курс по основам Swift.\nУмею работать с документацией. Хочу попасть на работу в большую компанию, чтобы продолжить путь в мобильной разработке и стать Senior.")
-                .padding(.bottom)
+            Text("""
+Начинающий IOS разработчик.
+Изучаю Swift на протяжении полутора лет.
+Прошёл курс по основам Swift.\nУмею работать с документацией.
+Хочу попасть на работу в большую компанию,
+чтобы продолжить путь в мобильной разработке и стать Senior.
+""")
+            .padding(.bottom)
 
             TitleView(title: "Основные умения")
-            Text("Foundation | GCD lv.1 | HIG | InterfaceBuilder | git | Autolayout | CocoaPods | MVC | URLSession lv.1 | VIPER | ARC lv.1 | SwiftUI lv.1 | Unit-тесты | SOLID lv.1 | UI-тесты | Аккаунт Apple Store | REST API | OperationQueue lv.1 | UIKit | Clean Swift | Верстка кодом | Alamofire lv.1 | Принципы ООП | Realm | JSON | Core Data lv.1 | MVVM lv.1 | MVP | Moya lv.1 | Notifications lv.1")
-                .padding(.bottom)
+            Text("""
+Foundation | GCD lv.1 | HIG | InterfaceBuilder | git |
+Autolayout | CocoaPods | MVC | URLSession lv.1 | VIPER |
+ARC lv.1 | SwiftUI lv.1 | Unit-тесты | SOLID lv.1 | UI-тесты |
+Аккаунт Apple Store | REST API | OperationQueue lv.1 | UIKit | Clean Swift |
+Верстка кодом | Alamofire lv.1 | Принципы ООП | Realm | JSON | Core Data lv.1 |
+MVVM lv.1 | MVP | Moya lv.1 | Notifications lv.1
+""")
+            .padding(.bottom)
 
             TitleView(title: "Образование")
             VStack(alignment: .leading) {
@@ -28,12 +41,19 @@ struct CVView: View {
                             .fontWeight(.medium)
                         Text("Факультет бизнеса «Капитаны» Менеджмент")
                     }
+
                     Spacer()
+
                     Text("июнь 2020г. - июнь 2024г.")
                 }
-                    Text("\nВ основе программы подготовки лежит учебно-прикладная и практическая работа по проектированию и внедрению собственного бизнес-проекта в инновационной сфере")
+                Text("""
+\nВ основе программы подготовки лежит учебно-прикладная
+и практическая работа по проектированию и внедрению собственного
+бизнес-проекта в инновационной сфере
+""")
             }
             .padding(.bottom)
+
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
@@ -45,7 +65,10 @@ struct CVView: View {
                     Spacer()
                     Text("май 2022г. - октябрь 2022г.")
                 }
-                    Text("\nВ основе программы лежат основные знания для освоения профессии IOS разработчик уровня Junior")
+                Text("""
+\nВ основе программы лежат основные знания для
+освоения профессии IOS разработчик уровня Junior
+""")
             }
             .padding(.bottom)
 
@@ -64,14 +87,15 @@ struct CVView: View {
                     Spacer()
                     Text("июнь 2020г. - июнь 2024г.")
                 }
-                Text("\nРаботал с Макросами (VBA) в Exel | Делал сводные таблицы и писал функции в Exel | Изучил базовый курс по SQL в Сбершколе")
+                Text("""
+\n-Работал с Макросами (VBA) в Exel\n-Делал сводные таблицы
+и писал функции в Exel\n-Изучил базовый курс по SQL в Сбершколе
+""")
             }
-
         }
         .navigationTitle("Curriculum vitae")
         .padding(.horizontal)
     }
-
 }
 
 struct CVView_Previews: PreviewProvider {
@@ -81,7 +105,7 @@ struct CVView_Previews: PreviewProvider {
 }
 
 struct TitleView: View {
-
+    
     let title: String
 
     var body: some View {

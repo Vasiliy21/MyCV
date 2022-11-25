@@ -11,17 +11,19 @@ struct BlocksGridView: View {
     
     let themeName: String
     let blocks: [Block]
-    private let columns = [GridItem(.adaptive(minimum: UIScreen.main.bounds.width - 30))]
+    private let columns = [
+        GridItem(.adaptive(minimum: UIScreen.main.bounds.width - 30))
+    ]
     
     var body: some View {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(blocks, id: \.blockView.title) { block in
-                        block.blockView
-                    }
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(blocks, id: \.blockView.title) { block in
+                    block.blockView
                 }
             }
-            .navigationTitle(themeName)
+        }
+        .navigationTitle(themeName)
     }
 }
 

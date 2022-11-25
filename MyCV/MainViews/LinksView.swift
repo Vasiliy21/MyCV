@@ -21,25 +21,17 @@ struct LinksView: View {
 
     var body: some View {
         ZStack {
-            Color(#colorLiteral(
-                red: 0.921431005,
-                green: 0.9214526415,
-                blue: 0.9214410186,
-                alpha: 1
-            ))
+            Color("LinkViewColor")
                 .ignoresSafeArea()
-
             VStack {
                 HStack {
 
                     Spacer()
 
-                    Button(action: {
-                        linksViewIsPresented.toggle()
-                    }) {
+                    Button(action: { linksViewIsPresented.toggle() }) {
                         Image(systemName: "multiply")
                             .font(.largeTitle)
-                            .foregroundColor(.black)
+                            .foregroundColor(.accentColor.self)
                             .padding(.trailing, 16)
                     }
                 }
@@ -124,7 +116,8 @@ struct LinksView: View {
                     isPresented: $mailConfirmationDialogIsPresented,
                     titleVisibility: .visible) {
                         Button("Copy") {
-                            UIPasteboard.general.string = "vasiliystartsev@gmail.com"
+                            UIPasteboard.general.string =
+                            "vasiliystartsev@gmail.com"
                         }
                         Button("Cancel", role: .cancel) {}
                     } message: {
@@ -157,9 +150,6 @@ struct LinksView: View {
         }
     }
 }
-
-
-
 
 struct LinksView_Previews: PreviewProvider {
     static var previews: some View {
@@ -197,11 +187,17 @@ struct ButtonLinkView: View {
 }
 
 extension View {
-    func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping() -> SheetView) -> some View {
+    func halfSheet<SheetView: View>(
+        showSheet: Binding<Bool>,
+        @ViewBuilder sheetView: @escaping() -> SheetView
+    ) -> some View {
 
         return self
             .background {
-                HalfSheetHelper(halfLinksViewIsPresented: showSheet, sheetView: sheetView())
+                HalfSheetHelper(
+                    halfLinksViewIsPresented: showSheet,
+                    sheetView: sheetView()
+                )
             }
     }
 }
@@ -216,7 +212,10 @@ struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
         return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    func updateUIViewController(
+        _ uiViewController: UIViewController,
+        context: Context
+    ) {
         if halfLinksViewIsPresented {
             let sheetController = CustomHostingController(rootView: sheetView)
             uiViewController.present(sheetController, animated: true) {
@@ -231,7 +230,8 @@ struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
 class CustomHostingController<Content: View>:
     UIHostingController<Content> {
     override func viewDidLoad() {
-        if let presentationController = presentationController as? UISheetPresentationController {
+        if let presentationController =
+            presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
             presentationController.prefersGrabberVisible = true
         }

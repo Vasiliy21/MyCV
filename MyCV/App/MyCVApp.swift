@@ -16,8 +16,6 @@ struct MyCVApp: App {
         WindowGroup {
             ZStack {
                 ContentView()
-                    .zIndex(1)
-
 
                 ZStack {
                     if showLaunchView {
