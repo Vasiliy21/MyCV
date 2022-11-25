@@ -17,28 +17,37 @@ struct LaunchView: View {
 
     var body: some View {
         ZStack {
-                Color.black
+            Color.black
                 .cornerRadius(10)
-                    .ignoresSafeArea()
-                VStack(spacing: 15) {
-                    Text("My CV App")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(.white, lineWidth: 3)
-                        HStack {
-                            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                .frame(width: showLoadingLine ? 0 : UIScreen.main.bounds.width - 100, height: 10)
-                                .animation(.spring(response: 0.6, dampingFraction: 1.2).delay(0.4), value: showLoadingLine)
+                .ignoresSafeArea()
 
-                            Spacer(minLength: 0)
+            VStack(spacing: 15) {
+                Text("My CV App")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
 
-                        }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .stroke(.white, lineWidth: 3)
+                    HStack {
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .frame(
+                                width: showLoadingLine ? 0 : UIScreen.main.bounds.width - 100,
+                                height: 10)
+                            .animation(.spring(
+                                response: 0.6,
+                                dampingFraction: 1.2
+                            )
+                                .delay(0.4), value: showLoadingLine)
+
+                        Spacer(minLength: 0)
+
                     }
-                    .frame(width: UIScreen.main.bounds.width - 100, height: 10)
                 }
-                .opacity(showLoadingLine ? 0 : 1)
-                .animation(.easeIn(duration: 0.3), value: showLoadingLine)
+                .frame(width: UIScreen.main.bounds.width - 100, height: 10)
+            }
+            .opacity(showLoadingLine ? 0 : 1)
+            .animation(.easeIn(duration: 0.3), value: showLoadingLine)
         }
         .foregroundColor(.white)
         .onAppear {
@@ -47,11 +56,9 @@ struct LaunchView: View {
         .onReceive(timer) { time in
             if counter == 3 {
                 showLaunchView.toggle()
-
                 timer.upstream.connect().cancel()
             }
             counter += 1
-
         }
     }
 }

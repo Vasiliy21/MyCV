@@ -12,24 +12,11 @@ struct CVView: View {
         ScrollView {
 
             TitleView(title: "Личные данные")
-            Text("""
-Начинающий IOS разработчик.
-Изучаю Swift на протяжении полутора лет.
-Прошёл курс по основам Swift.\nУмею работать с документацией.
-Хочу попасть на работу в большую компанию,
-чтобы продолжить путь в мобильной разработке и стать Senior.
-""")
+            Text("Начинающий IOS разработчик. Изучаю Swift на протяжении полутора лет. Прошёл курс по основам Swift.\nУмею работать с документацией. Хочу попасть на работу в большую компанию, чтобы продолжить свой путь в мобильной разработке и стать Senior.")
             .padding(.bottom)
 
             TitleView(title: "Основные умения")
-            Text("""
-Foundation | GCD lv.1 | HIG | InterfaceBuilder | git |
-Autolayout | CocoaPods | MVC | URLSession lv.1 | VIPER |
-ARC lv.1 | SwiftUI lv.1 | Unit-тесты | SOLID lv.1 | UI-тесты |
-Аккаунт Apple Store | REST API | OperationQueue lv.1 | UIKit | Clean Swift |
-Верстка кодом | Alamofire lv.1 | Принципы ООП | Realm | JSON | Core Data lv.1 |
-MVVM lv.1 | MVP | Moya lv.1 | Notifications lv.1
-""")
+            Text("Foundation | GCD | HIG | InterfaceBuilder | git | Autolayout | CocoaPods | MVC | URLSession | VIPER | ARC | SwiftUI | Unit-тесты | SOLID | UI-тесты | Аккаунт Apple Store | REST API | OperationQueue | UIKit | Clean Swift | Верстка кодом | Alamofire | Принципы ООП | Realm | JSON | Core Data | MVVM | MVP | Moya | Notifications")
             .padding(.bottom)
 
             TitleView(title: "Образование")
@@ -46,11 +33,7 @@ MVVM lv.1 | MVP | Moya lv.1 | Notifications lv.1
 
                     Text("июнь 2020г. - июнь 2024г.")
                 }
-                Text("""
-\nВ основе программы подготовки лежит учебно-прикладная
-и практическая работа по проектированию и внедрению собственного
-бизнес-проекта в инновационной сфере
-""")
+                Text("\nВ основе программы подготовки лежит учебно-прикладная и практическая работа по проектированию и внедрению собственного бизнес-проекта в инновационной сфере")
             }
             .padding(.bottom)
 
@@ -65,10 +48,7 @@ MVVM lv.1 | MVP | Moya lv.1 | Notifications lv.1
                     Spacer()
                     Text("май 2022г. - октябрь 2022г.")
                 }
-                Text("""
-\nВ основе программы лежат основные знания для
-освоения профессии IOS разработчик уровня Junior
-""")
+                Text("\nВ основе программы лежат основные знания для освоения профессии IOS разработчик уровня Junior")
             }
             .padding(.bottom)
 
@@ -87,10 +67,7 @@ MVVM lv.1 | MVP | Moya lv.1 | Notifications lv.1
                     Spacer()
                     Text("июнь 2020г. - июнь 2024г.")
                 }
-                Text("""
-\n-Работал с Макросами (VBA) в Exel\n-Делал сводные таблицы
-и писал функции в Exel\n-Изучил базовый курс по SQL в Сбершколе
-""")
+                Text("\n-Работал с Макросами (VBA) в Exel\n-Делал сводные таблицы и писал функции в Exel\n-Изучил базовый курс по SQL в Сбершколе")
             }
         }
         .navigationTitle("Curriculum vitae")

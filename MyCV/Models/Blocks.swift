@@ -13,7 +13,6 @@ struct Block {
 
     static func getBlock() -> [Block] {
         [
-
             Block(
                 blockView: BlockView(
                     title: "Константы и переменные. Базовые типы данных"
@@ -270,7 +269,7 @@ struct Block {
             Block(
                 blockView: BlockView(
                     title: "MVVM на практике"
-                                    ),
+                ),
                 title: "Архитектурные паттерны"
             ),
             Block(

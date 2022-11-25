@@ -20,7 +20,10 @@ struct MyCVApp: App {
                 ZStack {
                     if showLaunchView {
                         LaunchView(showLaunchView: $showLaunchView)
-                            .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top)))
+                            .transition(.asymmetric(
+                                insertion: .scale,
+                                removal: .move(edge: .top)
+                            ))
                     }
                 }
                 .animation(.linear, value: showLaunchView)
